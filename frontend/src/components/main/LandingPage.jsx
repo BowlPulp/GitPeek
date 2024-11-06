@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';  // Import Toastify styles
+
 import '../../App.css';
 
 const LandingPage = () => {
   const [username, setUsername] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (username) {
-      navigate(`/profile/${username}`);
+      const response = await fetch(`https://api.github.com/users/${username}`);
+
+      if (!response.ok) {
+        // If no user is found, show a rejection toast
+        toast.error('No user found!');
+      } else {
+        // If the user is found, navigate to their profile page
+        navigate(`/profile/${username}`);
+      }
     }
   };
 
@@ -20,7 +31,7 @@ const LandingPage = () => {
           @Search Username
         </div>
         <p className="text-gray-300 text-center mb-4">
-        Explore, Discover, Collaborate: Elevate your GitHub experience with our Profile Viewer. Visualize your coding journey in a single glance!
+          Explore, Discover, Collaborate: Elevate your GitHub experience with our Profile Viewer. Visualize your coding journey in a single glance!
         </p>
         <input
           type="text"
@@ -41,8 +52,11 @@ const LandingPage = () => {
       <div className="w-full md:w-1/2 flex justify-center items-center rounded-lg mt-8 md:mt-0 md:ml-8">
         <img src="Laptop.png" alt="Laptop" className="w-full h-auto object-cover rounded-md" />
       </div>
+
+      {/* Toast Container */}
+      <ToastContainer />
     </div>
   );
-}
+};
 
 export default LandingPage;

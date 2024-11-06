@@ -25,7 +25,7 @@ const Footer = () => {
 
           {/* Social Media Icons */}
           <div className="flex space-x-4 mt-4 md:mt-0">
-    <a href="https://github.com/BowlPulp/ImageTweak" target="_blank" rel="noopener noreferrer">
+    <a href="https://github.com/BowlPulp/GitPeek" target="_blank" rel="noopener noreferrer">
         <svg
             className="w-6 h-6 hover:text-gray-200"
             fill="currentColor"
