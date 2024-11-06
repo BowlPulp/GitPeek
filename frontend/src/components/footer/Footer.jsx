@@ -13,7 +13,7 @@ const Footer = () => {
             <a href="/contact" className="hover:text-gray-200">
               Contact
             </a>
-            <a href="https://github.com/BowlPulp/ImageTweak" className="hover:text-gray-200">
+            <a href="https://github.com/BowlPulp/GitPeek" className="hover:text-gray-200">
               Contribute
             </a>
           </div>
