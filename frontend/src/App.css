@@ -1,3 +1,4 @@
+/* Base masking support */
 .mask-with-browser-support {
   mask: linear-gradient(black, black), linear-gradient(black, black);
   mask-clip: content-box, border-box;
@@ -7,20 +8,200 @@
   -webkit-mask-composite: xor;
 }
 
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Dark theme base styling for the entire app */
+#root {
+  background-color: #0f1218;
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.animated-gradient {
-  background: linear-gradient(300deg, deepskyblue, darkviolet, #1f5f8b, #1dcd8d);
-  background-size: 240% 240%;
-  animation: gradient-animation 24s ease infinite;
+/* Navbar styling */
+.navbar {
+  background-color: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar a {
+  color: #a3b8cc;
+  transition: color 0.2s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+  color: #76a9fa;
+}
+
+/* Search box styling */
+.search-box {
+  background-color: #1d2433;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  color: #e2e8f0;
+  width: 100%;
+  max-width: 300px;
+  transition: all 0.2s ease;
+}
+
+.search-box:focus {
+  outline: none;
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.2);
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  color: #8b949e;
+}
+
+/* Search results styling */
+.search-results {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 0.5rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.search-result-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #30363d;
+  transition: background-color 0.2s ease;
+}
+
+.search-result-item:hover {
+  background-color: #1a2233;
+  cursor: pointer;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+/* Card styling for components like ProfilePage */
+.content-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Landing page specific styles */
+.landing-page {
+  text-align: center;
+}
+
+.landing-page h1 {
+  color: #76a9fa;
+  margin-bottom: 1.5rem;
+}
+
+/* Profile page specific styles */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-header {
+  background-color: #1a2233;
+  border-left: 3px solid #58a6ff;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+/* Contact page styling */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-control {
+  background-color: #1d2433;
+  border: 1px solid #30363d;
+  color: #e2e8f0;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Button styling */
+.btn {
+  background-color: #2d3748;
+  color: #a3b8cc;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #3a4a63;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3b82f6;
+}
+
+/* NotFound page styling */
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: 6rem;
+  color: #76a9fa;
+  margin-bottom: 1rem;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #161b22;
+  border-top: 1px solid #30363d;
+  padding: 1.5rem;
+  text-align: center;
+  color: #8b949e;
+}
+
+/* Text utility classes */
+.text-muted {
+  color: #8b949e;
+}
+
+.text-accent {
+  color: #76a9fa;
 }
