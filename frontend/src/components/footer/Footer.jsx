@@ -1,8 +1,11 @@
 import React from "react";
 
 const Footer = () => {
+  // Get the current year dynamically
+  const currentYear = new Date().getFullYear();
+  
   return (
-    <footer className="bg-[#000000] text-white py-8">
+    <footer className="bg-black text-white py-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
           {/* Links */}
@@ -20,7 +23,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="text-center order-3 md:order-2">
-            <p>© 2024 GitPeek. All rights reserved.</p>
+            <p>© {currentYear} GitPeek. All rights reserved.</p>
           </div>
 
           {/* Social Media Icons */}
