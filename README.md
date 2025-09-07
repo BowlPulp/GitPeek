@@ -1,7 +1,9 @@
 
 # GitPeek - Github Profile Viewer
 
-One spot destination where you can view everything about your github profile, ranging from reposities, followers, followings, live current information about your latest reposities. It is an open source project so feel free to contribute!
+GitPeek is your one-stop destination to explore everything about your GitHub profile in a clean and organized way. From repositories, followers, and following lists to real-time updates on your latest projects, GitPeek provides a seamless overview of your developer journey.
+
+As an open-source project, GitPeek welcomes contributions from the community — whether it’s adding new features, improving performance, or enhancing the user experience. Dive in, explore, and help shape the future of this developer-friendly tool!
 
 
 
